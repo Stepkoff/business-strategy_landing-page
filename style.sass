@@ -1,0 +1,641 @@
+// ========================= common styles
+//font-family: 'Baloo Da 2', cursive
+//font-family: 'Oswald', sans-serif
+
+@font-face
+  font-family: 'MADE Soulmaze'
+  src: url('assets/fonts/MADE Soulmaze PERSONAL USE.otf')
+  font-weight: bold
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+  text-decoration: none
+  list-style-type: none
+  font-family: "Baloo Da 2", cursive
+html
+  font-size: 62.5%
+  scroll-behavior: smooth
+  @media (max-width: 1650px)
+    font-size: 57%
+  @media (max-width: 1400px)
+    font-size: 45%
+  @media (max-width: 900px)
+    font-size: 40%
+  @media (max-width: 700px)
+    font-size: 35%
+  @media (max-width: 500px)
+    font-size: 30%
+html, body
+  height: 100%
+
+.blockScroll
+  overflow: hidden
+
+
+// ========================= end of common styles
+// ========================= logo
+.logo
+  position: absolute
+  top: 1.5rem
+  left: 4rem
+.logo__link
+  font-family: "MADE Soulmaze", sans-serif
+  font-size: 2.5rem
+  color: #eee
+  letter-spacing: 0.1rem
+  span
+    font-size: 3.5rem
+    font-weight: bold
+    color: #9e0e09
+    font-family: "MADE Soulmaze", sans-serif
+// ========================= end of logo
+// ========================= navbar
+.navbar
+  width: 100%
+  height: 8rem
+  background-color: rgba(0, 0, 0, .9)
+  position: fixed
+  top: -8rem
+  z-index: 5
+  padding: 3rem
+  transition: height .5s
+  animation: animateNavbar 1s .5s forwards
+@keyframes animateNavbar
+  0%
+    top: -8rem
+  100%
+    top: 0
+.navbar--active
+  height: 100%
+  .navbar__list
+    transition: all .7s .5s
+    opacity: 1
+    visibility: visible
+
+.navbar__list
+  position: absolute
+  top: 25%
+  left: 50%
+  transform: translateX(-50%)
+  display: flex
+  flex-direction: column
+  align-items: center
+  opacity: 0
+  visibility: hidden
+  transition: all .2s
+
+.navbar__list-item
+  font-family: "MADE Soulmaze", sans-serif
+  font-size: 4rem
+  letter-spacing: .3rem
+  color: #ffffff
+  margin: 2rem 0
+  transition: color .4s
+  &:hover
+    color: #9e0e09
+
+// ========================= end of navbar
+// ========================= menu
+.menu
+  width: 4rem
+  height: 4rem
+  position: fixed
+  top: 2rem
+  right: 4rem
+  z-index: 10
+  display: flex
+  flex-direction: column
+  justify-content: space-evenly
+  cursor: pointer
+.menu__line
+  width: 100%
+  height: .2rem
+  background-color: #eee
+.menu__line-1
+  width: 50%
+  transition: transform .3s
+
+//.menu__line-2
+.menu__line-3
+  width: 50%
+  align-self: flex-end
+  transition: transform .3s
+
+.menu--active
+  .menu__line-1
+    transform: translate(100%, 1rem) rotate(-35deg)
+    transform-origin: right
+  .menu__line-3
+    transform: translate(0, -1rem) rotate(35deg)
+    transform-origin: right
+// ========================= end of menu
+// ========================= hero section
+
+.hero
+  width: 100%
+  height: 100%
+  background: url("./assets/images/dark-bg.jpeg") 50% 50%/ cover no-repeat
+  position: relative
+.banner
+  width: 100%
+  position: absolute
+  top: 20%
+  left: 50%
+  transform: translateX(-50%)
+  text-align: center
+  @media (max-width: 900px)
+    top: 25%
+.banner__heading
+  margin: 0 0 4rem
+  height: 20rem
+  position: relative
+  perspective: 50rem
+  overflow: hidden
+  @media (max-width: 900px)
+    height: 15rem
+
+.banner__heading-inner
+  font-family: 'Oswald', sans-serif
+  font-size: 12rem
+  font-weight: 400
+  text-transform: uppercase
+  color: #fff
+  text-shadow: .3rem .3rem .6rem rgba(0, 0, 0, .5)
+  position: absolute
+  width: 100%
+  display: flex
+  justify-content: center
+  transform: translateZ(8rem)
+  opacity: 0
+  letter-spacing: 3rem
+  @media (max-width: 1400px)
+    font-size: 10rem
+  @media (max-width: 900px)
+    font-size: 8rem
+  @media (max-width: 500px)
+    font-size: 4.5rem
+    letter-spacing: 2rem
+.banner__heading-inner-1
+  animation: animateHeading 12s 3s infinite
+.banner__heading-inner-2
+  animation: animateHeading 12s 6s infinite
+.banner__heading-inner-3
+  animation: animateHeading 12s 9s infinite
+.banner__heading-inner-4
+  animation: animateHeading 12s 12s infinite
+
+@keyframes animateHeading
+  0%
+    transform: translateZ(8rem)
+    opacity: 0
+    letter-spacing: 3rem
+    @media (max-width: 500px)
+      letter-spacing: 2rem
+  3%
+    transform: translateZ(0)
+    opacity: 1
+    letter-spacing: 1.5rem
+    @media (max-width: 500px)
+      letter-spacing: 1rem
+  25%
+    transform: translateZ(0)
+    opacity: 1
+    letter-spacing: 1.5rem
+    @media (max-width: 500px)
+      letter-spacing: 1rem
+  28%
+    transform: translateZ(8rem)
+    opacity: 0
+    letter-spacing: 3rem
+    @media (max-width: 500px)
+      letter-spacing: 1rem
+  100%
+    transform: translateZ(8rem)
+    opacity: 0
+    letter-spacing: 3rem
+    @media (max-width: 500px)
+      letter-spacing: 1rem
+
+.banner__text
+  font-size: 4rem
+  font-weight: 400
+  text-transform: uppercase
+  color: #ffffff
+  background-color: rgba(0, 0, 0, .6)
+  width: 30%
+  margin: 0 auto 4rem
+  padding: 1rem 0
+  box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, .5)
+  opacity: 0
+  visibility: hidden
+  animation: fadeAnimation 1s 1.5s forwards
+  @media (max-width: 1400px)
+    width: 45rem
+    font-size: 3rem
+@keyframes fadeAnimation
+  0%
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visible
+
+.banner__btn
+  width: 30rem
+  height: 6rem
+  background: linear-gradient(to right, #9b0e0e, #7a1010)
+  color: #fff
+  font-size: 2rem
+  text-transform: uppercase
+  border-radius: 3rem
+  border: .1rem solid #800505
+  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, .5)
+  text-shadow: .6rem .3rem .2rem rgba(0, 0, 0, .4)
+  cursor: pointer
+  visibility: hidden
+  opacity: 0
+  animation: fadeAnimation 1s 2s forwards
+  position: relative
+  overflow: hidden
+  &:hover
+    &:before
+      content: ''
+      left: 100%
+  &:before
+    content: ''
+    width: 100%
+    height: 100%
+    background: linear-gradient(to right, transparent, #fff, transparent)
+    position: absolute
+    top: 0
+    left: -100%
+    transform: skew(-30deg)
+    transition: left .5s
+// ========================= end of hero section
+// ========================= about us
+.aboutUs
+  width: 100%
+  height: 100%
+  background-color: #222020
+  display: flex
+  align-items: center
+  padding: 0 10rem
+  position: relative
+  @media (max-width: 1400px)
+    flex-direction: column
+    height: 120%
+  @media (max-width: 700px)
+    height: 100%
+.section__title
+  font-family: "Oswald", sans-serif
+  font-size: 10rem
+  font-weight: 300
+  color: #ddd
+  margin: 0 1rem 0 0
+.section__line
+  width: 15rem
+  height: .2rem
+  background-color: #ddd
+  @media (max-width: 1500px)
+    display: none
+.aboutUs__video
+  width: 100rem
+  height: 50rem
+  position: absolute
+  top: 5rem
+  right: 15rem
+  box-shadow: 3rem 3rem 3rem rgba(0, 0, 0, .7)
+  overflow: hidden
+  &:hover
+    .aboutUs__video-controls
+      transform: translateY(0)
+  @media (max-width: 1800px)
+    width: 90rem
+    height: 45rem
+    right: 10rem
+  @media (max-width: 1650px)
+    width: 85rem
+    height: 40rem
+    right: 5rem
+  @media (max-width: 1400px)
+    top: 20%
+    left: 50%
+    transform: translateX(-50%)
+    width: 80rem
+  @media (max-width: 500px)
+    width: 60rem
+.aboutUs__video-elem
+  width: 100%
+  height: 100%
+  object-fit: cover
+  opacity: .3
+  transition: opacity .3s
+.aboutUs__video-controls
+  width: 100%
+  position: absolute
+  bottom: 0
+  background-color: rgba(0, 0, 0, .7)
+  transform: translateY(calc(100% - .7rem))
+  transition: transform .3s
+.aboutUs__video-controls-bar-wrap
+  width: 100%
+  height: .7rem
+  background-color: #000
+  position: absolute
+  top: 0
+  left: 0
+.aboutUs__video-controls-bar
+  height: 100%
+  width: 0
+  background-color: #d30819
+  transition: width .2s linear
+.aboutUs__video-buttons
+
+  button
+    padding: 2rem 1rem 1rem
+    border: none
+    background: none
+    cursor: pointer
+    i
+      font-size: 2.8rem
+      color: #fff
+
+.aboutUs__description
+  width: 100rem
+  position: absolute
+  bottom: 8rem
+  right: 15rem
+  font-size: 2rem
+  color: #ddd
+  border-top: .3rem double #aaa
+  border-bottom: .3rem double #aaa
+  padding: 2rem
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: justify
+  text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, .7)
+  line-height: 1.5
+  @media (max-width: 1800px)
+    width: 90rem
+    right: 10rem
+  @media (max-width: 1650px)
+    width: 85rem
+    right: 5rem
+    bottom: 10rem
+  @media (max-width: 1400px)
+    left: 50%
+    transform: translateX(-50%)
+    width: 80rem
+  @media (max-width: 500px)
+    width: 60rem
+  .fa-quote-left
+    align-self: flex-start
+    font-size: 5rem
+    margin: 0 0 2rem
+  .fa-quote-right
+    align-self: flex-end
+    font-size: 5rem
+// ========================= end of about us
+
+// ========================= pricing
+.pricing
+  width: 100%
+  height: 100%
+  background-color: #03070e
+  display: flex
+  align-items: center
+  padding-left: 10rem
+  overflow: hidden
+  @media (max-width: 1400px)
+    flex-direction: column
+    height: auto
+    padding: 5rem 0 10rem
+    .section__title
+      margin: 0 0 7rem
+.pricing__cards
+  width: 100%
+  display: flex
+  justify-content: space-evenly
+  padding: 1rem
+.pricing__card
+  width: 28rem !important
+  height: 45rem !important
+  background-color: #181b1d
+  border-radius: 1rem
+  box-shadow: 2rem 2rem 6rem rgba(0, 0, 0, 0.7)
+  transform: rotateY(180deg)
+.pricing__card-front
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+.pricing__card-title
+  font-size: 2rem
+  font-weight: 300
+  color: #fff
+  width: 100%
+  height: 5rem
+  display: flex
+  align-items: center
+  padding-left: 2rem
+  border-radius: 1rem 1rem 0 0
+.pricing__card-title--free
+  background: linear-gradient(to right, #087285, #0da5d3)
+.pricing__card-price
+  font-family: "MADE Soulmaze", sans-serif
+  font-size: 7rem
+  font-weight: 300
+  color: #fff
+//.pricing__card-list
+.pricing__card-list--free
+  color: #0da5d3
+.pricing__card-list-item
+  margin-bottom: 0.5rem
+  i
+    font-size: 1.8rem
+    width: 3rem
+
+  span
+    font-size: 1.8rem
+    font-weight: 300
+    letter-spacing: 0.1rem
+.pricing__card-btn
+  width: 18rem
+  height: 5rem
+  margin-bottom: 3rem
+  border-radius: 3rem
+  border: none
+  font-size: 1.6rem
+  text-transform: uppercase
+  color: #fff
+  text-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.5)
+.pricing__card-btn--free
+  background-color: #0da5d3
+.pricing__card-back
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  transform: rotateY(180deg)
+  border-radius: 1rem
+  backface-visibility: hidden
+  a
+    font-size: 2.5rem
+    color: #ffffff
+.pricing__card-back--free
+  background: linear-gradient(to right, #087285, #0da5d3)
+.pricing__card-title--basic
+  background: linear-gradient(to right, #946809, #bdba0e)
+.pricing__card-list--basic
+  color: #bdba0e
+.pricing__card-btn--basic
+  background-color: #bdba0e
+.pricing__card-back--basic
+  background: linear-gradient(to right, #946809, #bdba0e)
+.pricing__card-title--standard
+  background: linear-gradient(to right, #a10c14, #e23b3b)
+.pricing__card-list--standard
+  color: #e23b3b
+.pricing__card-btn--standard
+  background-color: #e23b3b
+.pricing__card-back--standard
+  background: linear-gradient(to right, #a10c14, #e23b3b)
+.pricing__card-title--premium
+  background: linear-gradient(to right, #0b7e48, #3be286)
+.pricing__card-list--premium
+  color: #3be286
+.pricing__card-btn--premium
+  background-color: #3be286
+.pricing__card-back--premium
+  background: linear-gradient(to right, #0b7e48, #3be286)
+
+.swiper-container
+  @media (max-width: 1400px)
+    width: 100%
+// ========================= end of pricing
+// ========================= contact
+.contact
+  width: 100%
+  height: 100%
+  background-color: #171718
+  display: flex
+  align-items: center
+  padding: 0 10rem
+  @media (max-width: 1400px)
+    flex-direction: column
+    height: auto
+    padding: 5rem 0
+  @media (max-width: 500px)
+
+.contact__wrapper
+  width: 80%
+  display: flex
+  flex-direction: column
+  align-items: center
+  h2
+    font-size: 4rem
+    color: #ccc
+    text-transform: uppercase
+    margin-bottom: 3rem
+
+.contact__details
+  display: flex
+  margin-bottom: 8rem
+  div
+    width: 25rem
+    text-align: center
+    margin: 4rem
+    @media (max-width: 700px)
+      margin: 3rem 2rem
+    @media (max-width: 500px)
+      width: 18rem
+      margin: 3rem 1rem
+    i
+      font-size: 5rem
+      color: #7a1010
+    h3
+      font-family: "MADE Soulmaze", serif
+      font-size: 2.5rem
+      margin: 2rem 0
+      color: #ccc
+    p
+      font-size: 1.6rem
+      color: #aaa
+
+.contact__form
+  width: 70rem
+  display: flex
+  flex-direction: column
+  @media (max-width: 500px)
+    width: 60rem
+  input, textarea
+    padding: 1.5rem
+    background-color: #444
+    color: #eee
+    border: none
+    margin-bottom: 2rem
+    font-family: "Oswald", sans-serif
+    font-size: 1.8rem
+    font-weight: 300
+    letter-spacing: 0.1rem
+  textarea
+    max-width: 100%
+    max-height: 15rem
+    min-height: 5.5rem
+  input[type="submit"]
+    background-color: #7a1010
+    text-transform: uppercase
+    cursor: pointer
+    transition: background-color 0.3s
+  input[type="submit"]:hover
+    background-color: #5f0303
+
+// ========================= end of contact
+
+// ========================= footer
+
+.footer
+  width: 100%
+  height: 12rem
+  background-color: #202122
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 0 10rem
+  @media (max-width: 900px)
+    padding: 0 5rem
+  @media (max-width: 700px)
+    flex-direction: column
+    justify-content: center
+    gap: 2rem
+
+
+.footer__nav
+  a
+    font-family: "MADE Soulmaze", sans-serif
+    font-size: 2rem
+    color: #ccc
+    margin-right: 3rem
+    letter-spacing: 0.1rem
+    transition: color 0.3s
+    &:hover
+      color: #862323
+    @media (max-width: 900px)
+      font-size: 1.8rem
+.footer__copy
+  font-size: 2rem
+  color: #ddd
+
+
+// ========================= end of footer
